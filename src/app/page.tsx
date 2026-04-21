@@ -1,65 +1,73 @@
-import Image from "next/image";
+import Image from 'next/image';
+import styles from './page.module.css';
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+    <div className={styles.container}>
+      {/* ヒーローセクション */}
+      <section className={styles.hero}>
+        <Image 
+          src="/images/hero.png" 
+          alt="山梨・甲府のリサイクルショップ 高価買取" 
+          fill
+          className={styles.heroImage}
           priority
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+        <div className={styles.heroOverlay}></div>
+        <div className={styles.heroContent}>
+          <span className={styles.heroBadge}>最短30分で到着！即日出張対応</span>
+          <h1 className={styles.heroTitle}>
+            山梨・甲府エリアでNo.1の<br />高価買取リサイクルショップ
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className={styles.heroSub}>
+            家電・家具・ブランド品まで、ご不要なものを即日現金化。<br />出張費・査定費はすべて完全無料です。
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* 当店が選ばれる理由 */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>当店が選ばれる3つの理由</h2>
+        <div className={styles.reasonsGrid}>
+          <div className={styles.reasonCard}>
+            <div className={styles.reasonIcon}>🚚</div>
+            <h3 className={styles.reasonTitle}>最短即日！スピーディーな対応</h3>
+            <p className={styles.reasonText}>
+              ご連絡いただいたその日にご自宅まで出張査定にお伺いすることも可能です。お急ぎの引越しや片付けに最適です。
+            </p>
+          </div>
+          <div className={styles.reasonCard}>
+            <div className={styles.reasonIcon}>💰</div>
+            <h3 className={styles.reasonTitle}>業界最高水準の高価買取</h3>
+            <p className={styles.reasonText}>
+              独自の販売ルートと徹底したコスト削減により、他店に負けない高価買取を実現。相見積もりも大歓迎です。
+            </p>
+          </div>
+          <div className={styles.reasonCard}>
+            <div className={styles.reasonIcon}>✨</div>
+            <h3 className={styles.reasonTitle}>手数料すべて無料の安心査定</h3>
+            <p className={styles.reasonText}>
+              出張費、査定料、キャンセル料は一切いただきません。提示金額にご納得いただけない場合でも無料です。
+            </p>
+          </div>
         </div>
-      </main>
+
+        {/* 出張対応エリア */}
+        <div className={styles.areaWrapper}>
+          <h2 className={styles.areaTitle}>山梨県内の主な出張対応エリア</h2>
+          <p className={styles.areaList}>
+            甲府市 / 甲斐市 / 昭和町 / 中央市 / 笛吹市 / 南アルプス市 / 韮崎市<br />
+            山梨市 / 甲州市 / 富士吉田市 / 都留市 / 富士河口湖町 ほか全域
+          </p>
+        </div>
+      </section>
+
+      {/* 常時追従 LINE誘導バナー (CTA) */}
+      <div className={styles.stickyBanner}>
+        <a href="#line-estimate" className={styles.ctaButton}>
+          <span>💬</span> LINEで今すぐ無料査定（最短5分）
+        </a>
+      </div>
     </div>
   );
 }

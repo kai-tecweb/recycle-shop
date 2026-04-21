@@ -1,0 +1,110 @@
+.container {
+  padding: 80px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 80vh;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--color-text-sub);
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.formCard {
+  background: var(--color-surface);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  border: 1px solid var(--color-border);
+}
+
+.formGroup {
+  margin-bottom: 25px;
+}
+
+.label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--color-text-main);
+}
+
+.required {
+  background-color: #ef4444;
+  color: white;
+  font-size: 0.8rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.input, .textarea {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  outline: none;
+  transition: border-color 0.3s;
+  font-family: inherit;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.input:focus, .textarea:focus {
+  border-color: var(--color-primary);
+}
+
+.submitButton {
+  width: 100%;
+  padding: 18px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+.submitButton:hover {
+  background-color: var(--color-primary-light);
+}
+
+.contactInfo {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.tel {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-primary);
+  margin: 10px 0;
+}
+
+@media (max-width: 600px) {
+  .formCard {
+    padding: 20px;
+  }
+}
